@@ -56,7 +56,9 @@ mdc' q r | mod q r == 0 = r
 {-
 - Calcula um MMC de dois numeros. 
 -}
-mmc x y = undefined
+mmc x y = head ys 
+          where ys = filter (divisivel x y) [(min x y)..x*y]
+divisivel x y n = mod n x == 0 && mod n y == 0
 
 {-
 - Determina se dois numeros inteiros positivos sao co-primos. Dois numeros sao co-primos se 
